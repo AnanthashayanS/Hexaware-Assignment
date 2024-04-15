@@ -916,9 +916,9 @@ SELECT
     pay.Amount AS TotalCost
 FROM
     Courier cr
-        INNER JOIN
+        LEFT JOIN
     CourierServices sr ON cr.ServiceID = sr.ServiceID
-        INNER JOIN
+        LEFT JOIN
     payment AS pay ON cr.CourierID = pay.PaymentID
 ORDER BY cr.CourierID ASC;
 
